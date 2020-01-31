@@ -19,13 +19,34 @@
     self.cocktailsBar.title = @"Cocktails"; //cause I use navigation Controller, therfore I set the navigation tile directly inside
 }
 
+-(void)fetchCocktails:(NSString*) userInput{
+}
+
+- (IBAction)findBtnTap:(id)sender {
+    if([self.ingredientTF.text  isEqual: @""]){ //check if user input is null
+        [self showAlert];
+        return;
+    }
+    [self fetchCocktails:self.ingredientTF.text];
+}
+
+-(void)showAlert { //To clearify the code, refactory alert to a seperate function
+    UIAlertController * alert = [UIAlertController
+        alertControllerWithTitle:@"No Ingrediant"
+        message:@"Please enter an ingrediant"
+        preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CocktailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CocktailsTableViewCell" forIndexPath:indexPath];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 0;
 }
 //
 //- (void)encodeWithCoder:(nonnull NSCoder *)coder {
@@ -71,5 +92,6 @@
 //- (void)updateFocusIfNeeded {
 //    <#code#>
 //}
+
 
 @end

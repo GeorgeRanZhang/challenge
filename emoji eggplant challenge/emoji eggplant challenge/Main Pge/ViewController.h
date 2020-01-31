@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *findBtn;
 @property (weak, nonatomic) IBOutlet UITableView *cocktailsTV;
 
+- (IBAction)findBtnTap:(id)sender;
 
 @end
 
