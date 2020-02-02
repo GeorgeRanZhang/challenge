@@ -10,6 +10,9 @@
 #import "CocktailsTableViewCell.h"
 #import "DataService.h"
 #import "Cocktail.h"
+
+#import "UIImageView+WebCache.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,DataServiceDelegate>
 {
     DataService *mDataService;//This is to do the request and response from server
@@ -34,6 +37,7 @@
     self.cocktailsTV.tableFooterView = [UIView new];//delete extra line
     myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "]; //for checking input
     self.cocktailsTV.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    [self.cocktailsTV reloadData];
 
 }
 
@@ -101,6 +105,10 @@
     NSString *t  = [cocktail valueForKey:@"strDrink"];
     NSLog(@"%@",t);
     [cell.contentLb setText:cocktail.strDrink];
+    
+    NSURL* url =  [NSURL URLWithString:cocktail.strDrinkThumb];
+    [cell.imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"download.png"]];//use SDWebImage to do the lazyload
+    
     return cell;
 }
 
