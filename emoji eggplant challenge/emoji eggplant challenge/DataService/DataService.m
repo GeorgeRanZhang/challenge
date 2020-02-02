@@ -13,9 +13,8 @@
 
 - (void)requestCocktails: (NSString *)ingredient{
     
-    
-    
     NSString *seachStr =[NSString stringWithFormat:@"https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=%@",ingredient];
+    
     //As the searchStr won't change until "i=", so I hardcode the first part. Should be constructed seperately to optimise the performance.
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:seachStr]
@@ -29,7 +28,7 @@
                                                     @try {
                                                       responseDic  = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                                                         if ([responseDic count] == 0) {
-                                                            [self.delegate callBackError];
+                                                            [self.delegate callBackSuccessed:mArray];
                                                         }
                                                         else
                                                         {

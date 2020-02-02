@@ -8,17 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class Cocktail;
-
-NS_ASSUME_NONNULL_BEGIN
-
-#pragma mark - Object interfaces
-
 @interface Cocktail : NSObject
 
 @property (nonatomic, copy) NSString *strDrink;
 @property (nonatomic, copy) NSString *strDrinkThumb;
 @property (nonatomic, copy) NSString *theIDDrink;
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 @end
-
-NS_ASSUME_NONNULL_END

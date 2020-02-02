@@ -10,7 +10,7 @@
 
 @implementation Cocktail
 
-- (instancetype)initWithDictionary:(NSDictionary*)dictionary {
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary {//Co
     if (self = [super init]) {
         if(self && [dictionary isKindOfClass:[NSDictionary class]]){
             self.strDrink = dictionary[@"strDrink"];
@@ -22,5 +22,9 @@
     return self;
 }
 
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary
+{
+    return [[self alloc]initWithDictionary:dictionary]; //this is to secure a space for the model and convert dictionary to it
+}
 
 @end

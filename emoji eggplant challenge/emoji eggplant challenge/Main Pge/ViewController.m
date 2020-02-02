@@ -13,7 +13,9 @@
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,DataServiceDelegate>
 {
     DataService *mDataService;//This is to do the request and response from server
-    NSDictionary *mDictionary;// Create a dictionary to store the response data
+    NSArray *cocktails;// Create a dictionary to store the response data
+    NSCharacterSet *myCharSet;
+    
 }
 
 @end
@@ -28,13 +30,30 @@
 - (void)initPage{
     self.cocktailsBar.title = @"Cocktails"; //cause I use navigation Controller, therfore I set the navigation tile directly inside
     mDataService = [[DataService alloc]init]; //init mDataService and sign delegate to itself
-    mDictionary = [[NSDictionary alloc]init]; //avoid null
+    cocktails = [[NSArray alloc]init]; //avoid null
+    self.cocktailsTV.tableFooterView = [UIView new];//delete extra line
+    myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "]; //for checking input
+    
 }
 
--(void)fetchCocktails:(NSString*) userInput{
+- (void)fetchCocktails:(NSString*) userInput{
+    userInput = [userInput stringByReplacingOccurrencesOfString:@" " withString:@"%20"];//handling space
     [mDataService requestCocktails:userInput];
-    
+    [self checkIngredientTypingHandling];
     mDataService.delegate = self;
+}
+
+- (NSString *)checkIngredientTypingHandling{
+    NSString *input=  self.ingredientTF.text;
+    while([input characterAtIndex:0] == ' '){
+        input = [input substringFromIndex:1]; // this loop is to handle user input space at first character
+    }
+    
+    while([input containsString:@"  "]){//this is to avoid user input any two continue space
+        input = [input stringByReplacingOccurrencesOfString:@"  " withString:@" "];
+    }
+    
+    return input;
 }
 
 - (IBAction)findBtnTap:(id)sender {
@@ -44,6 +63,20 @@
     }
     [self fetchCocktails:self.ingredientTF.text];
 }
+
+- (IBAction)editingDidChange:(id)sender { //handle type error
+    NSString *input = self.ingredientTF.text;
+    if([input isEqual: @""]) return; //no value
+    if([input isEqual: @" "]) input = @""; //check if user input space at first
+    if ([input length] >= 1 && ![myCharSet characterIsMember:[input characterAtIndex:[input length]-1]]){
+        //check if user input invalid character
+        input = [input substringToIndex:[input length]-1];
+    }
+    input = [input stringByReplacingOccurrencesOfString:@"  " withString:@" "];//check two space
+    input = [input stringByReplacingOccurrencesOfString:@". " withString:@" "];//check two space auto replace
+    self.ingredientTF.text = input;
+}
+
 
 -(void)showAlert: (NSString *)title withMessage:(NSString *)message { //To clearify the code, refactory alert to a seperate function
     UIAlertController * alert = [UIAlertController
@@ -62,13 +95,23 @@
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    CocktailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CocktailsTableViewCell" forIndexPath:indexPath];
+    CocktailsTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"CocktailsTableViewCell" forIndexPath:indexPath];
+    Cocktail *cocktail= [Cocktail modelObjectWithDictionary:[cocktails objectAtIndex:indexPath.row]];
+    NSString *t  = [cocktail valueForKey:@"strDrink"];
+    NSLog(@"%@",t);
+    [cell.contentLb setText:cocktail.strDrink];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return cocktails.count;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfSections:(NSInteger)section
+{
+    return 1;
+}
+
 //
 //- (void)encodeWithCoder:(nonnull NSCoder *)coder {
 //    <#code#>
@@ -126,13 +169,13 @@
 - (void)callBackSuccessed:(nonnull NSArray *)sArray {
     //once received response. should go back to main thread to continue progress
     dispatch_async(dispatch_get_main_queue(), ^{
+        self->cocktails = [sArray copy];//Block implicitly retains self
         if([sArray count] == 0){ //check if the response is null
             [self showAlert:@"No avaliable cocktails" withMessage:[NSString stringWithFormat: @"Sorry, no avaliable cocktails using %@",self.ingredientTF.text]];
-            return;
         }
+        [self.cocktailsTV reloadData];
     });
     
-//    [self.cocktailsTV reloadData];
 }
 
 

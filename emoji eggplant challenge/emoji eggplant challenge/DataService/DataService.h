@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @required
 
-- (void)callBackSuccessed:(NSArray *)sArray;
+- (void)callBackSuccessed:(NSArray *)responseDic;
 - (void)callBackError;
 
 @end

@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *cocktailsTV;
 
 - (IBAction)findBtnTap:(id)sender;
+- (IBAction)editingDidChange:(id)sender;
+
 
 @end
 
