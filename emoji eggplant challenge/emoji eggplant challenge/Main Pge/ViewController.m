@@ -33,7 +33,8 @@
     cocktails = [[NSArray alloc]init]; //avoid null
     self.cocktailsTV.tableFooterView = [UIView new];//delete extra line
     myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "]; //for checking input
-    
+    self.cocktailsTV.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+
 }
 
 - (void)fetchCocktails:(NSString*) userInput{

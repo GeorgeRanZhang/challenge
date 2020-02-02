@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA379D9923E6E34E00F0DF4D /* SDWebImage in Resources */ = {isa = PBXBuildFile; fileRef = AA379D9823E6E34E00F0DF4D /* SDWebImage */; };
+		AA4DB62823E3BBC80057100A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB62723E3BBC80057100A /* AppDelegate.m */; };
+		AA4DB62B23E3BBC80057100A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB62A23E3BBC80057100A /* SceneDelegate.m */; };
+		AA4DB62E23E3BBC80057100A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB62D23E3BBC80057100A /* ViewController.m */; };
+		AA4DB63123E3BBC80057100A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4DB62F23E3BBC80057100A /* Main.storyboard */; };
+		AA4DB63323E3BBCA0057100A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4DB63223E3BBCA0057100A /* Assets.xcassets */; };
+		AA4DB63623E3BBCA0057100A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4DB63423E3BBCA0057100A /* LaunchScreen.storyboard */; };
+		AA4DB63923E3BBCA0057100A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB63823E3BBCA0057100A /* main.m */; };
+		AA4DB64323E3BBCA0057100A /* emoji_eggplant_challengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB64223E3BBCA0057100A /* emoji_eggplant_challengeTests.m */; };
+		AA4DB64E23E3BBCB0057100A /* emoji_eggplant_challengeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB64D23E3BBCB0057100A /* emoji_eggplant_challengeUITests.m */; };
+		AA4DB65E23E3DBCA0057100A /* CocktailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB65D23E3DBCA0057100A /* CocktailsTableViewCell.m */; };
+		AA4DB66923E652760057100A /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB66823E652760057100A /* DataService.m */; };
+		AA4DB66C23E66A410057100A /* Cocktail.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DB66B23E66A410057100A /* Cocktail.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA4DB63F23E3BBCA0057100A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA4DB61B23E3BBC80057100A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA4DB62223E3BBC80057100A;
+			remoteInfo = "emoji eggplant challenge";
+		};
+		AA4DB64A23E3BBCB0057100A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA4DB61B23E3BBC80057100A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA4DB62223E3BBC80057100A;
+			remoteInfo = "emoji eggplant challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA379D9823E6E34E00F0DF4D /* SDWebImage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SDWebImage; path = "../../../../../../../Downloads/SDWebImage-master/SDWebImage"; sourceTree = "<group>"; };
+		AA379D9A23E6E5EA00F0DF4D /* SDWebImage-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "SDWebImage-master"; path = "../../../../../../../Downloads/SDWebImage-master"; sourceTree = "<group>"; };
+		AA4DB62323E3BBC80057100A /* emoji eggplant challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "emoji eggplant challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4DB62623E3BBC80057100A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AA4DB62723E3BBC80057100A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AA4DB62923E3BBC80057100A /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		AA4DB62A23E3BBC80057100A /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		AA4DB62C23E3BBC80057100A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AA4DB62D23E3BBC80057100A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AA4DB63023E3BBC80057100A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA4DB63223E3BBCA0057100A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA4DB63523E3BBCA0057100A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA4DB63723E3BBCA0057100A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA4DB63823E3BBCA0057100A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA4DB63E23E3BBCA0057100A /* emoji eggplant challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "emoji eggplant challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4DB64223E3BBCA0057100A /* emoji_eggplant_challengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = emoji_eggplant_challengeTests.m; sourceTree = "<group>"; };
+		AA4DB64423E3BBCA0057100A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA4DB64923E3BBCB0057100A /* emoji eggplant challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "emoji eggplant challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4DB64D23E3BBCB0057100A /* emoji_eggplant_challengeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = emoji_eggplant_challengeUITests.m; sourceTree = "<group>"; };
+		AA4DB64F23E3BBCB0057100A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA4DB65C23E3DBCA0057100A /* CocktailsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocktailsTableViewCell.h; sourceTree = "<group>"; };
+		AA4DB65D23E3DBCA0057100A /* CocktailsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocktailsTableViewCell.m; sourceTree = "<group>"; };
+		AA4DB66723E652760057100A /* DataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		AA4DB66823E652760057100A /* DataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		AA4DB66A23E66A410057100A /* Cocktail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cocktail.h; sourceTree = "<group>"; };
+		AA4DB66B23E66A410057100A /* Cocktail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cocktail.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA4DB62023E3BBC80057100A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA4DB63B23E3BBCA0057100A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA4DB64623E3BBCB0057100A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA4DB61A23E3BBC80057100A = {
+			isa = PBXGroup;
+			children = (
+				AA4DB62523E3BBC80057100A /* emoji eggplant challenge */,
+				AA4DB64123E3BBCA0057100A /* emoji eggplant challengeTests */,
+				AA4DB64C23E3BBCB0057100A /* emoji eggplant challengeUITests */,
+				AA4DB62423E3BBC80057100A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA4DB62423E3BBC80057100A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA4DB62323E3BBC80057100A /* emoji eggplant challenge.app */,
+				AA4DB63E23E3BBCA0057100A /* emoji eggplant challengeTests.xctest */,
+				AA4DB64923E3BBCB0057100A /* emoji eggplant challengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA4DB62523E3BBC80057100A /* emoji eggplant challenge */ = {
+			isa = PBXGroup;
+			children = (
+				AA4DB66D23E6D9610057100A /* Externals */,
+				AA4DB66323E652190057100A /* DataService */,
+				AA4DB65F23E650160057100A /* Models */,
+				AA4DB65B23E3DB940057100A /* Main Pge */,
+				AA4DB62623E3BBC80057100A /* AppDelegate.h */,
+				AA4DB62723E3BBC80057100A /* AppDelegate.m */,
+				AA4DB62923E3BBC80057100A /* SceneDelegate.h */,
+				AA4DB62A23E3BBC80057100A /* SceneDelegate.m */,
+				AA4DB62F23E3BBC80057100A /* Main.storyboard */,
+				AA4DB63223E3BBCA0057100A /* Assets.xcassets */,
+				AA4DB63423E3BBCA0057100A /* LaunchScreen.storyboard */,
+				AA4DB63723E3BBCA0057100A /* Info.plist */,
+				AA4DB63823E3BBCA0057100A /* main.m */,
+			);
+			path = "emoji eggplant challenge";
+			sourceTree = "<group>";
+		};
+		AA4DB64123E3BBCA0057100A /* emoji eggplant challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA4DB64223E3BBCA0057100A /* emoji_eggplant_challengeTests.m */,
+				AA4DB64423E3BBCA0057100A /* Info.plist */,
+			);
+			path = "emoji eggplant challengeTests";
+			sourceTree = "<group>";
+		};
+		AA4DB64C23E3BBCB0057100A /* emoji eggplant challengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AA4DB64D23E3BBCB0057100A /* emoji_eggplant_challengeUITests.m */,
+				AA4DB64F23E3BBCB0057100A /* Info.plist */,
+			);
+			path = "emoji eggplant challengeUITests";
+			sourceTree = "<group>";
+		};
+		AA4DB65B23E3DB940057100A /* Main Pge */ = {
+			isa = PBXGroup;
+			children = (
+				AA4DB62C23E3BBC80057100A /* ViewController.h */,
+				AA4DB62D23E3BBC80057100A /* ViewController.m */,
+				AA4DB65C23E3DBCA0057100A /* CocktailsTableViewCell.h */,
+				AA4DB65D23E3DBCA0057100A /* CocktailsTableViewCell.m */,
+			);
+			path = "Main Pge";
+			sourceTree = "<group>";
+		};
+		AA4DB65F23E650160057100A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA4DB66A23E66A410057100A /* Cocktail.h */,
+				AA4DB66B23E66A410057100A /* Cocktail.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AA4DB66323E652190057100A /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				AA4DB66723E652760057100A /* DataService.h */,
+				AA4DB66823E652760057100A /* DataService.m */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		AA4DB66D23E6D9610057100A /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AA379D9A23E6E5EA00F0DF4D /* SDWebImage-master */,
+				AA379D9823E6E34E00F0DF4D /* SDWebImage */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA4DB62223E3BBC80057100A /* emoji eggplant challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA4DB65223E3BBCB0057100A /* Build configuration list for PBXNativeTarget "emoji eggplant challenge" */;
+			buildPhases = (
+				AA4DB61F23E3BBC80057100A /* Sources */,
+				AA4DB62023E3BBC80057100A /* Frameworks */,
+				AA4DB62123E3BBC80057100A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "emoji eggplant challenge";
+			productName = "emoji eggplant challenge";
+			productReference = AA4DB62323E3BBC80057100A /* emoji eggplant challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA4DB63D23E3BBCA0057100A /* emoji eggplant challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA4DB65523E3BBCB0057100A /* Build configuration list for PBXNativeTarget "emoji eggplant challengeTests" */;
+			buildPhases = (
+				AA4DB63A23E3BBCA0057100A /* Sources */,
+				AA4DB63B23E3BBCA0057100A /* Frameworks */,
+				AA4DB63C23E3BBCA0057100A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA4DB64023E3BBCA0057100A /* PBXTargetDependency */,
+			);
+			name = "emoji eggplant challengeTests";
+			productName = "emoji eggplant challengeTests";
+			productReference = AA4DB63E23E3BBCA0057100A /* emoji eggplant challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AA4DB64823E3BBCB0057100A /* emoji eggplant challengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA4DB65823E3BBCB0057100A /* Build configuration list for PBXNativeTarget "emoji eggplant challengeUITests" */;
+			buildPhases = (
+				AA4DB64523E3BBCB0057100A /* Sources */,
+				AA4DB64623E3BBCB0057100A /* Frameworks */,
+				AA4DB64723E3BBCB0057100A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA4DB64B23E3BBCB0057100A /* PBXTargetDependency */,
+			);
+			name = "emoji eggplant challengeUITests";
+			productName = "emoji eggplant challengeUITests";
+			productReference = AA4DB64923E3BBCB0057100A /* emoji eggplant challengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA4DB61B23E3BBC80057100A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "RAN ZHANG";
+				TargetAttributes = {
+					AA4DB62223E3BBC80057100A = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					AA4DB63D23E3BBCA0057100A = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = AA4DB62223E3BBC80057100A;
+					};
+					AA4DB64823E3BBCB0057100A = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = AA4DB62223E3BBC80057100A;
+					};
+				};
+			};
+			buildConfigurationList = AA4DB61E23E3BBC80057100A /* Build configuration list for PBXProject "emoji eggplant challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA4DB61A23E3BBC80057100A;
+			productRefGroup = AA4DB62423E3BBC80057100A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA4DB62223E3BBC80057100A /* emoji eggplant challenge */,
+				AA4DB63D23E3BBCA0057100A /* emoji eggplant challengeTests */,
+				AA4DB64823E3BBCB0057100A /* emoji eggplant challengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA4DB62123E3BBC80057100A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA4DB63623E3BBCA0057100A /* LaunchScreen.storyboard in Resources */,
+				AA4DB63323E3BBCA0057100A /* Assets.xcassets in Resources */,
+				AA379D9923E6E34E00F0DF4D /* SDWebImage in Resources */,
+				AA4DB63123E3BBC80057100A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA4DB63C23E3BBCA0057100A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA4DB64723E3BBCB0057100A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA4DB61F23E3BBC80057100A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA4DB62E23E3BBC80057100A /* ViewController.m in Sources */,
+				AA4DB66923E652760057100A /* DataService.m in Sources */,
+				AA4DB62823E3BBC80057100A /* AppDelegate.m in Sources */,
+				AA4DB63923E3BBCA0057100A /* main.m in Sources */,
+				AA4DB65E23E3DBCA0057100A /* CocktailsTableViewCell.m in Sources */,
+				AA4DB62B23E3BBC80057100A /* SceneDelegate.m in Sources */,
+				AA4DB66C23E66A410057100A /* Cocktail.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA4DB63A23E3BBCA0057100A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA4DB64323E3BBCA0057100A /* emoji_eggplant_challengeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA4DB64523E3BBCB0057100A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA4DB64E23E3BBCB0057100A /* emoji_eggplant_challengeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA4DB64023E3BBCA0057100A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA4DB62223E3BBC80057100A /* emoji eggplant challenge */;
+			targetProxy = AA4DB63F23E3BBCA0057100A /* PBXContainerItemProxy */;
+		};
+		AA4DB64B23E3BBCB0057100A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA4DB62223E3BBC80057100A /* emoji eggplant challenge */;
+			targetProxy = AA4DB64A23E3BBCB0057100A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA4DB62F23E3BBC80057100A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA4DB63023E3BBC80057100A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA4DB63423E3BBCA0057100A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA4DB63523E3BBCA0057100A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA4DB65023E3BBCB0057100A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AA4DB65123E3BBCB0057100A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA4DB65323E3BBCB0057100A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSGS8ZX558;
+				INFOPLIST_FILE = "emoji eggplant challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "test.emoji-eggplant-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA4DB65423E3BBCB0057100A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSGS8ZX558;
+				INFOPLIST_FILE = "emoji eggplant challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "test.emoji-eggplant-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA4DB65623E3BBCB0057100A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSGS8ZX558;
+				INFOPLIST_FILE = "emoji eggplant challengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "test.emoji-eggplant-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emoji eggplant challenge.app/emoji eggplant challenge";
+			};
+			name = Debug;
+		};
+		AA4DB65723E3BBCB0057100A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSGS8ZX558;
+				INFOPLIST_FILE = "emoji eggplant challengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "test.emoji-eggplant-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emoji eggplant challenge.app/emoji eggplant challenge";
+			};
+			name = Release;
+		};
+		AA4DB65923E3BBCB0057100A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSGS8ZX558;
+				INFOPLIST_FILE = "emoji eggplant challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "test.emoji-eggplant-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "emoji eggplant challenge";
+			};
+			name = Debug;
+		};
+		AA4DB65A23E3BBCB0057100A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSGS8ZX558;
+				INFOPLIST_FILE = "emoji eggplant challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "test.emoji-eggplant-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "emoji eggplant challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA4DB61E23E3BBC80057100A /* Build configuration list for PBXProject "emoji eggplant challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA4DB65023E3BBCB0057100A /* Debug */,
+				AA4DB65123E3BBCB0057100A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA4DB65223E3BBCB0057100A /* Build configuration list for PBXNativeTarget "emoji eggplant challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA4DB65323E3BBCB0057100A /* Debug */,
+				AA4DB65423E3BBCB0057100A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA4DB65523E3BBCB0057100A /* Build configuration list for PBXNativeTarget "emoji eggplant challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA4DB65623E3BBCB0057100A /* Debug */,
+				AA4DB65723E3BBCB0057100A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA4DB65823E3BBCB0057100A /* Build configuration list for PBXNativeTarget "emoji eggplant challengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA4DB65923E3BBCB0057100A /* Debug */,
+				AA4DB65A23E3BBCB0057100A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA4DB61B23E3BBC80057100A /* Project object */;
+}
