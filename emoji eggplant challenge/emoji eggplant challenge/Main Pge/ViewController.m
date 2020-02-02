@@ -8,7 +8,13 @@
 
 #import "ViewController.h"
 #import "CocktailsTableViewCell.h"
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "DataService.h"
+#import "Cocktail.h"
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,DataServiceDelegate>
+{
+    DataService *mDataService;//This is to do the request and response from server
+    NSDictionary *mDictionary;// Create a dictionary to store the response data
+}
 
 @end
 
@@ -16,27 +22,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initPage]; //init
+}
+
+- (void)initPage{
     self.cocktailsBar.title = @"Cocktails"; //cause I use navigation Controller, therfore I set the navigation tile directly inside
+    mDataService = [[DataService alloc]init]; //init mDataService and sign delegate to itself
+    mDictionary = [[NSDictionary alloc]init]; //avoid null
 }
 
 -(void)fetchCocktails:(NSString*) userInput{
+    [mDataService requestCocktails:userInput];
+    
+    mDataService.delegate = self;
 }
 
 - (IBAction)findBtnTap:(id)sender {
     if([self.ingredientTF.text  isEqual: @""]){ //check if user input is null
-        [self showAlert];
+        [self showAlert:@"No Ingrediant" withMessage:@"Please enter an ingrediant"];
         return;
     }
     [self fetchCocktails:self.ingredientTF.text];
 }
 
--(void)showAlert { //To clearify the code, refactory alert to a seperate function
+-(void)showAlert: (NSString *)title withMessage:(NSString *)message { //To clearify the code, refactory alert to a seperate function
     UIAlertController * alert = [UIAlertController
-        alertControllerWithTitle:@"No Ingrediant"
-        message:@"Please enter an ingrediant"
+        alertControllerWithTitle:title
+        message:message
         preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+    {
+        //Do some thing here
+        [alert dismissViewControllerAnimated:YES completion:nil];
+        [self.presentedViewController presentingViewController];
+    }]];
     [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 
@@ -92,6 +113,27 @@
 //- (void)updateFocusIfNeeded {
 //    <#code#>
 //}
+
+
+- (void)callBackError {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //once received response. should go back to main thread to continue progress
+        [self showAlert:@"Network Error" withMessage: @"Sorry, the network is temporary disabled, please try agian later"];
+    });
+    
+}
+
+- (void)callBackSuccessed:(nonnull NSArray *)sArray {
+    //once received response. should go back to main thread to continue progress
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if([sArray count] == 0){ //check if the response is null
+            [self showAlert:@"No avaliable cocktails" withMessage:[NSString stringWithFormat: @"Sorry, no avaliable cocktails using %@",self.ingredientTF.text]];
+            return;
+        }
+    });
+    
+//    [self.cocktailsTV reloadData];
+}
 
 
 @end
