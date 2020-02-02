@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString *strDrink;
 @property (nonatomic, copy) NSString *strDrinkThumb;
-@property (nonatomic, copy) NSString *theIDDrink;
+@property (nonatomic, copy) NSString *idDrink;
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dictionary;
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 @end

@@ -12,7 +12,7 @@
 #import "Cocktail.h"
 
 #import "UIImageView+WebCache.h"
-
+#import "CocktailDetailViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,DataServiceDelegate>
 {
     DataService *mDataService;//This is to do the request and response from server
@@ -37,6 +37,7 @@
     self.cocktailsTV.tableFooterView = [UIView new];//delete extra line
     myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "]; //for checking input
     self.cocktailsTV.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    [self.cocktailsTV registerClass:[CocktailsTableViewCell class] forCellReuseIdentifier:@"CocktailsTableViewCell"];
     [self.cocktailsTV reloadData];
 
 }
@@ -102,13 +103,10 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CocktailsTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"CocktailsTableViewCell" forIndexPath:indexPath];
     Cocktail *cocktail= [Cocktail modelObjectWithDictionary:[cocktails objectAtIndex:indexPath.row]];
-    NSString *t  = [cocktail valueForKey:@"strDrink"];
-    NSLog(@"%@",t);
-    [cell.contentLb setText:cocktail.strDrink];
-    
     NSURL* url =  [NSURL URLWithString:cocktail.strDrinkThumb];
     [cell.imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"download.png"]];//use SDWebImage to do the lazyload
-    
+    [cell.textLabel setText:cocktail.strDrink];
+    cell.contentView.userInteractionEnabled = true;
     return cell;
 }
 
@@ -121,51 +119,27 @@
     return 1;
 }
 
-//
-//- (void)encodeWithCoder:(nonnull NSCoder *)coder {
-//    <#code#>
-//}
-//
-//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-//    <#code#>
-//}
-//
-//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-//    <#code#>
-//}
-//
-//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-//    <#code#>
-//}
-//
-//- (void)setNeedsFocusUpdate {
-//    <#code#>
-//}
-//
-//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-//    <#code#>
-//}
-//
-//- (void)updateFocusIfNeeded {
-//    <#code#>
-//}
+-(void)tableView:(nonnull UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [self.view endEditing:YES];
+}
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"showDetail"])
+    {
+        NSLog(@"called");
+        //if you need to pass data to the next controller do it here
+        NSIndexPath *indexPath = [self.cocktailsTV indexPathForSelectedRow];
+        Cocktail *cocktail= [Cocktail modelObjectWithDictionary:[cocktails objectAtIndex:indexPath.row]];
+        [segue.destinationViewController setTitle:cocktail.strDrink];
+        CocktailDetailViewController* detailVC = [segue destinationViewController];
+        detailVC.idDrink = cocktail.idDrink;
+    }
+}
 
 - (void)callBackError {
     dispatch_async(dispatch_get_main_queue(), ^{

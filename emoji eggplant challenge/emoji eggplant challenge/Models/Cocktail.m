@@ -15,7 +15,7 @@
         if(self && [dictionary isKindOfClass:[NSDictionary class]]){
             self.strDrink = dictionary[@"strDrink"];
             self.strDrinkThumb = dictionary[@"strDrinkThumb"];
-            self.theIDDrink = dictionary[@"theIDDrink"];
+            self.idDrink = dictionary[@"idDrink"];
         }
 
     }

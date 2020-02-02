@@ -88,6 +88,8 @@
 		AA58BE2723E7710900624897 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58BDE323E7710900624897 /* UIColor+HexString.m */; };
 		AA58BE2823E7710900624897 /* SDAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58BDE423E7710900624897 /* SDAssociatedObject.m */; };
 		AA58BE2A23E7747D00624897 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = AA58BE2923E7747D00624897 /* download.png */; };
+		AA58BE2E23E7782C00624897 /* CocktailDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58BE2D23E7782C00624897 /* CocktailDetailViewController.m */; };
+		AA58BE3123E78E2200624897 /* IngredientDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58BE3023E78E2200624897 /* IngredientDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,6 +275,10 @@
 		AA58BDE323E7710900624897 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		AA58BDE423E7710900624897 /* SDAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAssociatedObject.m; sourceTree = "<group>"; };
 		AA58BE2923E7747D00624897 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
+		AA58BE2C23E7782C00624897 /* CocktailDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CocktailDetailViewController.h; sourceTree = "<group>"; };
+		AA58BE2D23E7782C00624897 /* CocktailDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocktailDetailViewController.m; sourceTree = "<group>"; };
+		AA58BE2F23E78E2200624897 /* IngredientDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientDetail.h; sourceTree = "<group>"; };
+		AA58BE3023E78E2200624897 /* IngredientDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,10 +329,11 @@
 		AA4DB62523E3BBC80057100A /* emoji eggplant challenge */ = {
 			isa = PBXGroup;
 			children = (
+				AA58BE2B23E777F700624897 /* Detail Page */,
 				AA58BD5223E76FF400624897 /* External */,
 				AA4DB66323E652190057100A /* DataService */,
 				AA4DB65F23E650160057100A /* Models */,
-				AA4DB65B23E3DB940057100A /* Main Pge */,
+				AA4DB65B23E3DB940057100A /* Main Page */,
 				AA4DB62623E3BBC80057100A /* AppDelegate.h */,
 				AA4DB62723E3BBC80057100A /* AppDelegate.m */,
 				AA4DB62923E3BBC80057100A /* SceneDelegate.h */,
@@ -359,7 +366,7 @@
 			path = "emoji eggplant challengeUITests";
 			sourceTree = "<group>";
 		};
-		AA4DB65B23E3DB940057100A /* Main Pge */ = {
+		AA4DB65B23E3DB940057100A /* Main Page */ = {
 			isa = PBXGroup;
 			children = (
 				AA4DB62C23E3BBC80057100A /* ViewController.h */,
@@ -367,7 +374,7 @@
 				AA4DB65C23E3DBCA0057100A /* CocktailsTableViewCell.h */,
 				AA4DB65D23E3DBCA0057100A /* CocktailsTableViewCell.m */,
 			);
-			path = "Main Pge";
+			path = "Main Page";
 			sourceTree = "<group>";
 		};
 		AA4DB65F23E650160057100A /* Models */ = {
@@ -375,6 +382,8 @@
 			children = (
 				AA4DB66A23E66A410057100A /* Cocktail.h */,
 				AA4DB66B23E66A410057100A /* Cocktail.m */,
+				AA58BE2F23E78E2200624897 /* IngredientDetail.h */,
+				AA58BE3023E78E2200624897 /* IngredientDetail.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -567,6 +576,15 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		AA58BE2B23E777F700624897 /* Detail Page */ = {
+			isa = PBXGroup;
+			children = (
+				AA58BE2C23E7782C00624897 /* CocktailDetailViewController.h */,
+				AA58BE2D23E7782C00624897 /* CocktailDetailViewController.m */,
+			);
+			path = "Detail Page";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -714,7 +732,9 @@
 				AA58BE0023E7710900624897 /* SDImageCoderHelper.m in Sources */,
 				AA58BDF423E7710900624897 /* SDWebImageCacheSerializer.m in Sources */,
 				AA58BDFD23E7710900624897 /* SDWebImageDownloaderResponseModifier.m in Sources */,
+				AA58BE3123E78E2200624897 /* IngredientDetail.m in Sources */,
 				AA58BE1323E7710900624897 /* UIImage+MemoryCacheCost.m in Sources */,
+				AA58BE2E23E7782C00624897 /* CocktailDetailViewController.m in Sources */,
 				AA58BE2723E7710900624897 /* UIColor+HexString.m in Sources */,
 				AA58BE2223E7710900624897 /* SDInternalMacros.m in Sources */,
 				AA58BE0523E7710900624897 /* UIImage+ExtendedCacheData.m in Sources */,

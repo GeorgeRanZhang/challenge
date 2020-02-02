@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LZt-ht-Zk8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LZt-ht-Zk8">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="139" width="375" height="562"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CocktailsTableViewCell" textLabel="Gef-Vz-1Bb" style="IBUITableViewCellStyleDefault" id="ocM-qg-ATt" customClass="CocktailsTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CocktailsTableViewCell" textLabel="Gef-Vz-1Bb" style="IBUITableViewCellStyleDefault" id="ocM-qg-ATt" customClass="CocktailsTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ocM-qg-ATt" id="8QA-0V-v6y">
@@ -57,6 +57,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="5fJ-Zo-4I9"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mMO-1V-8e7"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -81,11 +82,40 @@
                         <outlet property="cocktailsTV" destination="scS-08-tn8" id="2PO-HO-UPi"/>
                         <outlet property="findBtn" destination="Mcd-05-VZ3" id="0iH-0n-bbz"/>
                         <outlet property="ingredientTF" destination="sGO-I5-efi" id="haG-HV-zvw"/>
+                        <segue destination="kai-8U-tf5" kind="show" identifier="showDetail" id="bdQ-wN-mTg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--Cocktail Detail View Controller-->
+        <scene sceneID="f6E-FL-3b9">
+            <objects>
+                <viewController id="kai-8U-tf5" customClass="CocktailDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yhX-6K-yEG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-gI-2Wn">
+                                <rect key="frame" x="207" y="192" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ccg-iP-ohr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ptT-a9-6EH"/>
+                    <connections>
+                        <outlet property="nameLb" destination="oBa-gI-2Wn" id="kcu-pU-xr4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AiB-Kx-xVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JFO-ZC-mH7">
