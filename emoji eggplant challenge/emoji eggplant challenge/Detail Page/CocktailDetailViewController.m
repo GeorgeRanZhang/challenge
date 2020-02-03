@@ -22,8 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@",self.idDrink);
-    self.nameLb.text = self.idDrink;
     [self initPage];
 }
 
@@ -59,7 +57,19 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         IngredientDetail *ingredient= [IngredientDetail modelObjectWithDictionary:[responseDic objectAtIndex:0]];
-        self.nameLb.text = [NSString stringWithFormat:@"%@",ingredient];
+        NSString * output =[NSString stringWithFormat:@"Ingredient Name: %@\r",ingredient.strDrink];
+        
+        
+        output = [NSString stringWithFormat:@"%@ID :%@\r\r",output,ingredient.idDrink];
+        output = [NSString stringWithFormat:@"%@Tags :%@\r\r",output,ingredient.strTags];
+        output = [NSString stringWithFormat:@"%@Category :%@\r\r",output,ingredient.strCategory];
+        output = [NSString stringWithFormat:@"%@Alcoholic :%@\r\r",output,ingredient.strAlcoholic];
+        output = [NSString stringWithFormat:@"%@Instruction :%@\r\r",output,ingredient.strInstructions];
+        output = [NSString stringWithFormat:@"%@Glass :%@\r\r",output,ingredient.strGlass];
+        output = [NSString stringWithFormat:@"%@Ingredient1 :%@\r\r",output,ingredient.strIngredient1 == NULL ? @"" : ingredient.strIngredient1];
+        output = [NSString stringWithFormat:@"%@Ingredient2 :%@\r\r",output,ingredient.strIngredient2 == NULL ? @"" : ingredient.strIngredient2];
+        output = [NSString stringWithFormat:@"%@Ingredient3 :%@\r\r",output,ingredient.strIngredient3 == NULL ? @"" : ingredient.strIngredient3];
+        self.nameLb.text = output;
     });
     
 }

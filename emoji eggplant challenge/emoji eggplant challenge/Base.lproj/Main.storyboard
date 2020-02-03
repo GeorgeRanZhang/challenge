@@ -97,15 +97,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-gI-2Wn">
-                                <rect key="frame" x="16" y="67" width="329" height="485"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-gI-2Wn">
+                                <rect key="frame" x="16" y="69" width="343" height="598"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oBa-gI-2Wn" firstAttribute="top" secondItem="ccg-iP-ohr" secondAttribute="top" constant="25" id="J9o-P8-fYO"/>
+                            <constraint firstItem="oBa-gI-2Wn" firstAttribute="leading" secondItem="yhX-6K-yEG" secondAttribute="leadingMargin" id="NuR-at-HC3"/>
+                            <constraint firstItem="oBa-gI-2Wn" firstAttribute="bottom" secondItem="ccg-iP-ohr" secondAttribute="bottom" id="YX2-4C-YsY"/>
+                            <constraint firstItem="oBa-gI-2Wn" firstAttribute="trailing" secondItem="yhX-6K-yEG" secondAttribute="trailingMargin" id="nRN-MX-LEN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ccg-iP-ohr"/>
                     </view>
                     <navigationItem key="navigationItem" id="ptT-a9-6EH"/>
