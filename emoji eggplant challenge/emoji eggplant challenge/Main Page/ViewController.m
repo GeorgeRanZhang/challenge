@@ -39,28 +39,15 @@
     self.cocktailsTV.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     [self.cocktailsTV registerClass:[CocktailsTableViewCell class] forCellReuseIdentifier:@"CocktailsTableViewCell"];
     [self.cocktailsTV reloadData];
-
+    mDataService.delegate = self;
 }
 
 - (void)fetchCocktails:(NSString*) userInput{
     userInput = [userInput stringByReplacingOccurrencesOfString:@" " withString:@"%20"];//handling space
     [mDataService requestCocktails:userInput];
-    [self checkIngredientTypingHandling];
-    mDataService.delegate = self;
+
 }
 
-- (NSString *)checkIngredientTypingHandling{
-    NSString *input=  self.ingredientTF.text;
-    while([input characterAtIndex:0] == ' '){
-        input = [input substringFromIndex:1]; // this loop is to handle user input space at first character
-    }
-    
-    while([input containsString:@"  "]){//this is to avoid user input any two continue space
-        input = [input stringByReplacingOccurrencesOfString:@"  " withString:@" "];
-    }
-    
-    return input;
-}
 
 - (IBAction)findBtnTap:(id)sender {
     if([self.ingredientTF.text  isEqual: @""]){ //check if user input is null

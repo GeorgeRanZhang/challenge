@@ -8,6 +8,7 @@
 
 #import "DataService.h"
 #import "Cocktail.h"
+#import "IngredientDetail.h"
 @implementation DataService
 
 
@@ -36,6 +37,44 @@
                                                                 [mArray addObject:cocktail];
                                                                 NSLog(@"%@",cocktail);
                                                             }
+                                                            [self.delegate callBackSuccessed:mArray];
+                                                        }
+                                                    }
+                                                    @catch (NSException * e) {
+                                                        [self.delegate callBackError];
+                                                    }
+                                                    
+                                                }
+                                            }];
+    [dataTask resume];
+}
+
+- (void)requestIngredientDetail: (NSString *)ingredientID{
+    
+    NSString *seachStr =[NSString stringWithFormat:@"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=%@",ingredientID];
+    
+    //As the searchStr won't change until "i=", so I hardcode the first part. Should be constructed seperately to optimise the performance.
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:seachStr]
+                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                
+                                                if (error)
+                                                    [self.delegate callBackError];
+                                                else {
+                                                    NSMutableArray *mArray = [[NSMutableArray alloc] init];
+                                                    NSDictionary *responseDic;
+                                                    @try {
+                                                      responseDic  = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                                                        if ([responseDic count] == 0) {
+                                                            [self.delegate callBackSuccessed:mArray];
+                                                        }
+                                                        else
+                                                        {
+                                                            for (IngredientDetail *detail in [responseDic objectForKey:@"drinks"]){
+                                                                [mArray addObject:detail];
+                                                                NSLog(@"%@",detail);
+                                                            }
+                                                        
                                                             [self.delegate callBackSuccessed:mArray];
                                                         }
                                                     }

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,unsafe_unretained) id<DataServiceDelegate> delegate;
 
 - (void)requestCocktails: (NSString *)ingredient;
-
+- (void)requestIngredientDetail: (NSString *)ingredientID;
 
 @end
 
